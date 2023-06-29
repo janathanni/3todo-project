@@ -1,0 +1,20 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<div id="wrap">
+    <p id="hello">어서오세요😆</p>
+    <p id="nickname">{{username}}님</p>
+  <p id="ganbare">오늘도 화이팅!👊👊</p>
+  <text onclick = "location.href = '{% url 'setting:set-password' %}' " id="label_txt2">비밀번호 변경</text>
+  <br>
+  <text type = button onclick = "location.href = '{% url 'setting:set-username' %}' " id="label_txt2"> 닉네임 변경하기 </text>
+  <br>
+  <text type = button onclick = "location.href = '{% url 'common:logout' %}' " id="label_txt2"> 로그아웃 </text>
+  <br>
+  <text type = button onclick = "location.href = '{% url 'setting:resign' %}' " id="label_txt3"> 탈퇴하기 </text>
+  <!-- 조단희가 바꾼 곳 -->
+  <br>
+  <text type = button onclick = "location.href = '{% url 'setting:agreements' %}' " id="label_txt3"> 이용약관 및 개인정보처리방침 </text>
+  <!-- 조단희가 바꾼 곳 끝 -->
+</div>
+{% endblock %}

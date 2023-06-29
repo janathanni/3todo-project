@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/svg.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/setting.css' %}?after">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script defer src ="{% static 'js/main.js' %}"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="btn">
+      <button onclick =  "location.href = '{% url 'todo:todo' %}'" class="todo_btn">TODO</button> 
+      <button onclick = "location.href = '{% url 'setting:settings' %}'" class="setting_btn">설정</button>
+    </div>
+
+    {% block content %}
+    {% endblock%}
+  </div>
+</body>
+<script src ="{% static 'js/main.js' %}"></script>
+<script defer src ="{% static 'js/index.min.js' %}"></script>
+<!-- <script>
+  function takeScreenShot(){
+    html2canvas(document.querySelector("#donewrap")).then(canvas => {
+      console.log(canvas.toDataURL());
+      navigator.share(canvas.toDataURL());
+    });
+  }
+</script> -->
+</html>

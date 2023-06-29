@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+{% block content %}
+<div id="wrap">
+  <div id="top">
+    <svg id="arrow" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 110" onclick = "location.href = '{% url 'setting:settings' %}'">
+      <g id="_레이어_1-2" data-name="레이어 1">
+        <polyline class="arrow-cls-1" points="65 105 35 80 5 55 35 30 65 5"/>
+      </g>
+    </svg>
+    <p>이용 약관</p>
+  </div>
+  <div id="agreeBox">
+    {% include "common/agree1.html" %}
+    <br>
+    
+    개인정보처리방침
+    {% include "common/agree2.html" %}
+  </div>
+</div>
+
+{% endblock %}

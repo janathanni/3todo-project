@@ -1,0 +1,60 @@
+<!-- 탈퇴 html -->
+{% extends "main/base.html" %}
+{% load socialaccount %}
+{% block content%}
+<div id="wrap">
+  <div id="top">
+    <svg id="arrow" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 110" onclick = "location.href = '{% url 'setting:settings' %}'">
+      <g id="_레이어_1-2" data-name="레이어 1">
+        <polyline class="arrow-cls-1" points="65 105 35 80 5 55 35 30 65 5"/>
+      </g>
+    </svg>
+    <p>회원 탈퇴</p>
+  </div>
+  {% get_social_accounts user as accounts %}
+  {% if accounts %} 
+  <form method = "POST" id="settingform">
+      {% csrf_token %}
+      {% for message in messages %}
+      {% if message.tags == "error" %}
+      {{message}}
+      {% endif %}
+      {% endfor %}
+      {% include "form_errors.html" %}
+      {% for field in form %}
+      {{field}}
+      {% endfor %}
+  <p><span class="redtxt">
+  모든 데이터를 삭제하고 탈퇴하는 것에 동의합니다.<br>
+  정말 탈퇴 하시겠습니까?</span></p>
+  <br>
+  <div id="check">
+    <input type = "checkbox" name = "agree" class = "agree" label = "agree" id = "logincheck"><label for="logincheck"></label><p>예, 동의합니다.</p>
+  </div>
+  <button type = submit class="btn4">탈퇴하기</button>
+  </form>
+  {% else %}
+  <form method = "POST" id="settingform">
+    <p>탈퇴 확인을 위해 비밀번호를 적어주세요.</p><br>
+      {% csrf_token %}
+      {% for message in messages %}
+      {% if message.tags == "error" %}
+      {{message}}
+      {% endif %}
+      {% endfor %}
+      {% include "form_errors.html" %}
+      {% for field in form %}
+      {{field}}
+      {% endfor %}
+  <p><span class="redtxt">
+  모든 데이터를 삭제하고 탈퇴하는 것에 동의합니다.<br>
+  정말 탈퇴 하시겠습니까?</span></p>
+  <br>
+  <div id="check">
+    <input type = "checkbox" name = "agree" class = "agree" label = "agree" id = "logincheck"><label for="logincheck"></label><p>예, 동의합니다.</p>
+  </div>
+  <button type = submit class="btn4">탈퇴하기</button>
+  </form>
+  {% endif %}
+  {% endblock %}
+</div>

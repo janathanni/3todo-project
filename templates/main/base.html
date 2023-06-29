@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/svg.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/setting.css' %}?after">
+    <link rel="stylesheet" href="{% static 'css/donelist.css' %}?after">
+    <script defer src ="{% static 'js/main.js' %}"></script>
+    <link rel="preconnected" as="font" href="https://use.typekit.net/iyy2yam.js" type="font/woff2" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+<script defer src ="{% static 'js/main.js' %}"></script>
+</html>

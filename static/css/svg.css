@@ -1,0 +1,344 @@
+.logo_3 {
+  fill: #ff9d00;
+}
+
+#logo_id {
+  width: 10%;
+  margin: 10% 45% 10%;
+}
+
+#confetti{
+  width: 16em;
+  height: 10em;
+}
+
+.confetti-cls-1 {
+  fill: #c9b4ee;
+}
+
+.confetti-cls-2 {
+  fill: #79e9c4;
+}
+
+.confetti-cls-3 {
+  fill: #8bb6ec;
+}
+
+.confetti-cls-4 {
+  fill: #fea686;
+}
+
+.confetti-cls-5 {
+  fill: #f5df4e;
+}
+
+.confetti-cls-6 {
+  fill: #8cb6ee;
+}
+
+.confetti-cls-7 {
+  fill: #fefefc;
+}
+
+.confetti-cls-8 {
+  fill: #ea6;
+}
+
+.confetti-cls-9 {
+  fill: #d0844b;
+}
+
+.confetti-cls-10 {
+  fill: #d25c78;
+}
+
+.confetti-cls-11 {
+  fill: #cab4ee;
+}
+
+.confetti-cls-12 {
+  fill: #a183e1;
+}
+
+.confetti-cls-13 {
+  fill: #eea966;
+}
+
+.confetti-cls-14 {
+  fill: #fee166;
+}
+
+.confetti-cls-15 {
+  fill: #f6c4da;
+}
+
+#cross{
+  width: 7%;
+  position: absolute;
+  top: 7%;
+  right: 7%;
+}
+
+#agreeCross{
+  width: 7%;
+  position: absolute;
+  top: 5%;
+  right: 7%;
+}
+
+.cross-cls-1 {
+  fill: none;
+  stroke: #949398;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 10px;
+}
+
+#memo_icon{
+  width: 50%;
+  margin: 0% 25% 10%;
+}
+
+.memo-cls-1 {
+  fill: #949398;
+}
+
+.memo-cls-2 {
+  fill: #f5df4e;
+}
+
+.memo-cls-3 {
+  fill: #eccf76;
+}
+
+.memo-cls-4 {
+  fill: #019db1;
+}
+
+.memo-cls-5 {
+  fill: #ea6;
+}
+
+.memo-cls-6 {
+  fill: #d25c78;
+}
+
+.memo-cls-7 {
+  fill: #505860;
+}
+
+.memo-cls-8 {
+  fill: #fefefe;
+}
+
+#arrow{
+  width: 5%;
+  margin: 3%;
+}
+
+.arrow-cls-1 {
+  fill: none;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 10px;
+}
+
+#profile_img{
+  width: 10%;
+}
+
+.profile-cls-1 {
+  fill: #ff9d00;
+}
+
+.profile-cls-2 {
+  fill: #949398;
+}
+
+#instagram{
+  width: 100%;
+}
+
+.instagram-cls-1 {
+  fill: #fdc622;
+}
+
+.instagram-cls-2 {
+  fill: #fefcfd;
+}
+
+.instagram-cls-3 {
+  fill: #fd5d5e;
+}
+
+.instagram-cls-4 {
+  fill: #fd784f;
+}
+
+.instagram-cls-5 {
+  fill: #bc0eb6;
+}
+
+.instagram-cls-6 {
+  fill: #fd9c3b;
+}
+
+.instagram-cls-7 {
+  fill: #e71b93;
+}
+
+.instagram-cls-8 {
+  fill: #c610ae;
+}
+
+.instagram-cls-9 {
+  fill: #fa2183;
+}
+
+.instagram-cls-10 {
+  fill: #9a03d3;
+}
+
+.instagram-cls-11 {
+  fill: #af0ac2;
+}
+
+.instagram-cls-12 {
+  fill: #d014a6;
+}
+
+.instagram-cls-13 {
+  fill: #fd426e;
+}
+
+.instagram-cls-14 {
+  fill: #f21e8a;
+}
+
+.instagram-cls-15 {
+  fill: #fdb62b;
+}
+
+#twitter{
+  width: 100%;
+  margin-top: 10%;
+}
+
+.twitter-cls-1 {
+  fill: #019db1;
+}
+
+#kakao2{
+  width:100%;
+}
+
+.kakao2-cls-1 {
+  fill: #723f1c;
+}
+
+.logo_3 {
+  fill: #ff9d00;
+}
+
+#google_icon, #kakao_icon{
+  width: 13%;
+  margin: 0 5% 0 10%;
+}
+
+.google-cls-1 {
+  fill: #fe4b26;
+}
+
+.google-cls-2 {
+  fill: #d83f22;
+}
+
+.google-cls-3 {
+  fill: #fed401;
+}
+
+.google-cls-4 {
+  fill: #177ee5;
+}
+
+.google-cls-5 {
+  fill: #13b247;
+}
+
+.kakao-cls-1 {
+  fill: #723f1c;
+}
+
+#firework1{
+  width: 50%;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  z-index: 0;
+  animation: boom1 1s ease infinite normal;
+}
+
+#firework2{
+  width: 50%;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  z-index: 0;
+  animation: boom2 1s ease infinite normal;
+}
+
+@keyframes boom1{
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(100%);
+  }
+}
+
+@keyframes boom2{
+  0% {
+    transform: scale(0);
+  }
+
+  25%{
+    transform: scale(0);
+  }
+
+  100%{
+    transform: scale(100%);
+  }
+}
+
+.firework-cls-1 {
+  fill: #02569b;
+}
+
+.firework-cls-2 {
+  fill: #febbdb;
+}
+
+.firework-cls-3 {
+  fill: #f5df4e;
+}
+
+.firework-cls-4 {
+  fill: #019db1;
+}
+
+.firework-cls-5 {
+  fill: #d25c78;
+}
+
+#share{
+  width: 7%;
+  position: absolute;
+  top: 7%;
+  right: 20%;
+}
+
+.share-cls-1 {
+  fill: #949398;
+}

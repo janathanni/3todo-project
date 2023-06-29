@@ -1,0 +1,9 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div id="wrap">
+  <p id="nothing">탈퇴 완료 </p>
+  <button class="btn" onclick="location.href = '{% url 'common:index' %}'">메인으로 돌아가기</button>
+</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<div id="wrap">
+  <div id="top">
+    <svg id="arrow" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 110" onclick = "location.href = '{% url 'setting:settings' %}'">
+      <g id="_레이어_1-2" data-name="레이어 1">
+        <polyline class="arrow-cls-1" points="65 105 35 80 5 55 35 30 65 5"/>
+      </g>
+    </svg>
+    <p>닉네임 변경</p>
+  </div>
+
+  {% if messages %}
+	{% for message in messages %}
+    <!-- 성공 메시지 -->
+    {% if message.tags == "success" %}
+		{{ message.message }}
+    <!-- 오류 메시지, 공백을 입력했을 때 발생 -->
+    {% elif message.tags == "error" %}
+		{{ message.message }}
+    {% endif %}
+	{% endfor %}
+{% endif %}
+<form method = "post" action="{% url 'setting:set-username' %}" id="settingform">
+    {%csrf_token%}
+    <input type = "text" Placeholder = "새 닉네임을 적어주세요." name = "set-nickname" maxlength = '10' class="form-control">
+    <br>
+    <button type = submit class="btn btn-primary">닉네임 변경하기</button>
+</form>
+{% endblock %}
+</div>

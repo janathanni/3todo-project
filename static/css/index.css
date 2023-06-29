@@ -1,0 +1,70 @@
+p{
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.3em;
+  margin: 0;
+}
+
+h1{
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+}
+
+body{
+  width: 100vw;
+  height: 100vh;
+  background-color: #F1EDE9;
+}
+
+#wrap{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.logo_3 {
+  fill: #ff9d00;
+}
+
+#logo {
+  width: 30%;
+  margin: 37% 35% 10%;
+}
+
+#logo_id {
+  width: 10%;
+  margin: 10% 45% 10%;
+}
+
+.btn1 {
+  border: none;
+  margin: 40% 20% 0;
+  width: 60%;
+  height: 5%;
+  font-size: 1em;
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  background: #ff9d00;
+  border-radius: 20px/50%;
+}
+
+.btn2{
+  border: none;
+  background: none;
+  font-size: 1em;
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  text-align: center;
+  color: #D25C78;
+  margin: 0 20% 0;
+  width: 60%;
+  height: 5%;
+}
+
+span{
+  color:#D25C78;
+}
+

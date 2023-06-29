@@ -1,0 +1,82 @@
+{% extends "main/base.html" %}
+{% block content %}
+
+<div id="wrap">
+  <div id="top">
+    <svg id="arrow" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 110" onclick = "location.href = '{% url 'todo:todo' %}'">
+      <g id="_레이어_1-2" data-name="레이어 1">
+        <polyline class="arrow-cls-1" points="65 105 35 80 5 55 35 30 65 5"/>
+      </g>
+    </svg>
+    <p>과거 투두리스트</p>
+  </div>
+  <div id="sort">
+    <button type = "button" id="sortnewest">최신순</button>
+    <button type = "button" id="sortoldest">과거순</button>
+  </div>
+  <div id="newestlist">
+    {% if done_todos_with_day_recent %}
+    <!-- 최신순 -->
+    {% for key, value in done_todos_with_day_recent.items %}
+      <ul>
+        <li id="done_num">
+          <span id="unit">Day</span>
+          <span id="done_day_count">{{key}}</span>
+        </li>
+        <li id="done_list">
+          {% for v in value %}
+          <p>{{v}}</p>
+          {% endfor %}
+        </li>
+      </ul>
+    {% endfor %}
+  </div>
+  <div id="oldestlist">
+    <!-- 과거순 -->
+    {% for key, value in done_todos_with_day.items %}
+      <ul>
+        <li id="done_num">
+          <span id="unit">Day</span>
+          <span id="done_day_count">{{key}}</span>
+        </li>
+        <li id="done_list">
+            {% for v in value %}
+          <p>{{v}}</p>
+          {% endfor %}
+        </li>
+      </ul>
+      {% endfor %}
+    </div>
+    <!-- 해낸 날이 없을 때 -->
+    {% else %}
+    <p id="nothing">
+      투두리스트를 완료해보세요!
+    </p>
+    {% endif %}
+</div>
+
+
+<script>
+let doneNewestBtn = document.getElementById("sortnewest");
+let doneOldestBtn = document.getElementById("sortoldest");
+let doneNewestList = document.getElementById("newestlist");
+let doneOldestList = document.getElementById("oldestlist");
+  
+const BtnNf = doneNewestBtn.addEventListener("click", function(){
+  console.log(1);
+  doneNewestList.style.display = "block";
+  doneNewestBtn.style.color = "black";
+  doneOldestList.style.display = "none";
+  doneOldestBtn.style.color = "#949398";
+  
+})
+  
+const BtnOf = doneOldestBtn.addEventListener("click", function(){
+  doneOldestList.style.display = "block";
+  doneOldestBtn.style.color = "black";
+  doneNewestList.style.display = "none";
+  doneNewestBtn.style.color = "#949398";
+  console.log(2);
+})
+</script>
+{% endblock %}

@@ -1,0 +1,477 @@
+#btn{
+  width:100%;
+  height: 6%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.btn {
+  border: none;
+  margin: 3% 20% 3% 20%;
+  width: 60%;
+  height: 5%;
+  font-size: 1em;
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  background: #ff9d00;
+  border-radius: 20px/50%;
+  padding: 3% 5%;
+}
+
+#day{
+  width: 80%;
+  margin: 35% 10% 10%;
+}
+
+#counting{
+  display: flex;
+}
+
+.num_day{
+  color: #ff9d00;
+  font-family: "SLEIGothicTTF";
+  font-weight: 500;
+  font-size: 5em;
+  line-height: 1em;
+}
+
+.num_day2{
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  text-align: left;
+  font-size: 1.5em;
+  line-height: 1em;
+  margin: 19% 5% 0;
+}
+
+.date{
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  text-align: left;
+  font-size: 1em;
+  line-height: 2em;
+  display: block;
+  color: #949398;
+}
+
+#popup{
+  width: 80%;
+  margin: 7% 10%;
+  background: #F1EDE9;
+  border-radius: 40px;
+  padding: 10% 5%;
+}
+
+.popup_txt{
+  text-align: center;
+  display: block;
+}
+
+.popup_txt2{
+  text-align: center;
+  display: block;
+}
+
+#popWrap{
+  width: 18em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  animation: slide-up 0.5s ease 1 normal;
+}
+
+@keyframes slide-up{
+  from{
+    top: 200%;
+  }
+
+  to{
+    top: 50%;
+  }
+}
+
+#popup2{
+  width: 18em;
+  height: 18em;
+}
+
+#popup2 ul{
+  width: 80%;
+  display: flex;
+  margin: 5% 10%;
+}
+
+#popup2 li{
+  width: 100%;
+}
+
+#popup2-1{
+  width: 18em;
+  height: 18em;
+  border: 3px solid #949398;
+  background: #F1EDE9;
+  border-radius: 40px;
+  padding: 9% 5%;
+  display: none;
+}
+
+#popup2-2{
+  width: 18em;
+  height: 18em;
+  border: 3px solid #949398;
+  background: #F1EDE9;
+  border-radius: 40px;
+  padding: 7% 4%;
+}
+
+#popup2-2 ul{
+  width: 100%;
+  display: flex;
+  margin: 10% 0 20%;
+}
+
+#done_list2 p{
+  text-align: left;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  margin-bottom: 5%;
+  display: block;
+  height: 30%;
+}
+
+#done_list2 p::before{
+  content: '▶ ';
+  color: #D25C78;
+  font-weight: 500;
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+
+#done_day_count2{
+  color: black;
+  font-family: "SLEIGothicTTF";
+  font-weight: 500;
+  font-size: 4em;
+  padding-top: 5%;
+  padding-right: 8%;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+#unit2{
+  width: 100%;
+  display: block;
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  text-align: center;
+  font-size: 1em;
+  line-height: 1em;
+  color: #949398;
+  padding-right: 8%;
+}
+
+#popupCheck{
+  display: flex;
+  margin: 0;
+  position: absolute;
+  width: 50%;
+  top: 8%;
+  left: 8%;
+}
+
+#custom_canvas{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#add_btn {
+  border: none;
+  margin: 5% 5% 10%;
+  width: 90%;
+  height: 5%;
+  font-size: 1em;
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  color: black;
+  text-align: center;
+  background: #ff9d00;
+  border-radius: 20px/50%;
+  padding: 4% 5%;
+}
+
+#todo{
+  width: 80%;
+  height: auto;
+  border: none;
+  border-bottom: 2px solid #ff9d00;
+  background: none;
+  margin-left: 10%;
+  text-align: left;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 2em;
+  padding: 0 3%;
+  color: black;
+  border-radius: 0;
+}
+
+#todo::placeholder{
+  font-family: "Pretendard-Regular";
+  color: #949398;
+}
+
+#hiddentodo{
+  visibility: hidden;
+  padding: 0;
+  margin: 0 10%;
+}
+
+#pastTodo{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #ff9d00;
+  padding: 3%;
+  font-size: 1em;
+}
+
+#pastTodo p{
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.sentence{
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  text-align: center;
+  font-size: 1em;
+}
+
+.person{
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  text-align: center;
+  font-size: 1em;
+  color:#d25c78;
+}
+
+#label_txt{
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  text-align: center;
+  font-size: 1em;
+  margin-left: 25%;
+}
+
+#label_txt2{
+  font-family: "Pretendard-Regular";
+  font-weight: 700;
+  text-align: center;
+  font-size: 1em;
+  margin-left: 10%;
+  line-height: 2em;
+}
+
+#label_txt3{
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  text-align: center;
+  font-size: 1em;
+  margin-left: 10%;
+  color: #949398;
+  line-height: 2em;
+}
+
+.form-control{
+  border: 2px solid #949398;
+  margin: 0% 20% 5% 20%;
+  width: 60%;
+  height: 5%;
+  font-size: 0.8em;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  color: black;
+  text-align: left;
+  background: #F1EDE9;
+  border-radius: 20px/50%;
+  padding: 3% 5%;
+}
+
+#id_email{
+  border: 2px solid #949398;
+  margin: 0% 20% 5% 20%;
+  width: 60%;
+  height: 5%;
+  font-size: 0.8em;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  color: black;
+  text-align: left;
+  background: #F1EDE9;
+  border-radius: 20px/50%;
+  padding: 3% 5%;
+}
+
+.btn4{
+  border: none;
+  background: none;
+  font-size: 0.8em;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  text-align: center;
+  color: #949398;
+  margin: 5% 20%;
+  width: 60%;
+  height: 5%;
+}
+
+#delet{
+  border: none;
+  background: none;
+  width:100%;
+}
+
+#trash{
+  width: 80%;
+  display: inline-block;
+  margin-left: 20%;
+}
+
+.trash-cls-1 {
+  fill: #d25c78;
+}
+
+#todolist {
+  display: flex;
+  margin: 15% 10%;
+  width: 80%;
+}
+
+#todolist:first-of-type {
+  display: flex;
+  margin: 15% 10% 10%;
+  width: 80%;
+}
+
+#check {
+  display: flex;
+  margin: -2% 0 -3% 33%;
+}
+
+#check p{
+  font-weight: 700;
+}
+
+#checkbox_box{
+  width: 10%;
+}
+
+form input[type="checkbox"]{
+  display: none;
+}
+
+form input[type="checkbox"] + label{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border:3px solid #ff9d00;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 3%;
+}
+
+form input[type="checkbox"]:checked + label{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border:3px solid #ff9d00;
+  position: relative;
+  background: #ff9d00;
+  border-radius: 50%;
+}
+
+form input[type="checkbox"]:checked + label::after{
+  content:'✔';
+  font-size: 1em;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  left: -3px;
+  top: -4px;
+  border-radius: 50%;
+}
+
+input[id="popcheck"]:checked + label{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border:3px solid #ff9d00;
+  position: relative;
+  background: #ff9d00;
+  border-radius: 50%;
+}
+
+input[id="popcheck"]:checked + label::after{
+  content:'✔';
+  font-size: 1em;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  left: -3px;
+  top: -4px;
+  border-radius: 50%;
+}
+
+#todolist_txt{
+  width: 80%;
+  text-align: left;
+  margin-top: 0;
+  line-height: 2em;
+}
+
+#delet_box{
+  width: 10%;
+}
+
+#donewrap{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5) ;
+  position: absolute;
+  z-index: 20;
+  display: block;
+}
+
+#donePopup{
+  width:100%;
+  height: 100vh;
+}
+
+#agreeBox{
+  width: 80%;
+  margin: 20% 10%;
+  font-size: 1em;
+  font-family: "Pretendard-Regular";
+  font-weight: 500;
+  color: black;
+  text-align: left;
+  line-height: 1.5em;
+}

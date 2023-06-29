@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/common.css' %}?after">
+  <link rel="stylesheet" href="{% static 'css/svg.css' %}?after">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}?after">
+  <title>Document</title>
+</head>
+<body>
+  <div id="wrap">
+    <svg id="logo_id" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.98 628.75">
+      <g id="_레이어_1-2" data-name="레이어 1">
+        <path class="logo_3" d="M110.76,421.8c0,37.58,6.85,65.44,20.56,83.56,13.7,18.12,33.16,27.19,58.36,27.19,27.85,0,49.63-7.52,65.33-22.55,15.69-15.03,23.54-37.8,23.54-68.31s-6.41-52.28-19.23-69.3c-12.83-17.01-32.5-25.53-59.03-25.53H128v-94.84h72.29c11.49,0,21.33-2.54,29.51-7.63,8.18-5.08,14.92-11.82,20.23-20.23,5.31-8.39,9.06-17.68,11.27-27.85,2.21-10.17,3.32-20.56,3.32-31.17-.45-19.9-6.63-36.69-18.57-50.4-11.94-13.7-30.29-20.56-55.05-20.56-22.99,0-41.23,8.62-54.71,25.87-13.49,17.24-20.23,43.77-20.23,79.58H7.3c-.89-65.43,14.69-115.07,46.76-148.89C86.1,16.91,133.3,0,195.65,0c22.55,0,44.43,2.88,65.66,8.62,21.22,5.75,40.23,15.04,57.04,27.85,16.35,13.26,29.62,30.4,39.79,51.4,10.17,21,15.25,46.54,15.25,76.6,0,24.77-5.2,48.53-15.59,71.29-10.39,22.78-26.2,41.23-47.42,55.38,10.17,5.75,19.78,12.71,28.85,20.89,9.06,8.19,17.13,18.02,24.21,29.51,7.07,11.5,12.6,24.77,16.58,39.79,3.98,15.04,5.97,32.28,5.97,51.73,0,30.95-3.88,58.59-11.61,82.9-7.74,24.31-19.79,44.87-36.14,61.68-16.36,16.8-37.04,29.62-62.01,38.47-24.98,8.84-54.71,13.04-89.2,12.6-28.75-.45-54.61-4.87-77.59-13.26-22.99-8.4-42.45-21-58.36-37.8-16.36-17.24-28.96-38.8-37.8-64.66C4.41,487.12,0,456.73,0,421.8H110.76Z"/>
+      </g>
+    </svg>
+
+    <p>{{account.get_provider.name}}계정을 연결하기 위해서
+      <br>아래의 폼을 채워주세요.</p>
+    <br>
+    <form class="signup" id="signup_form" method="post" action="{% url 'socialaccount_signup' %}">
+      {% csrf_token %}
+      {% if form.errors %}
+        {% if form.name.errors %}
+        <p id="error_txt">닉네임을 적어주세요.</p>
+        {% elif form.email.errors %}
+        <p id="error_txt">이미 존재하는 이메일이거나 유효하지 않은 이메일 양식입니다.</p>
+        {% elif form.agree_terms.errors or form.agree_marketing.errors %}
+        <p id="error_txt">이용약관 및 개인정보처리방침에 동의해주세요.</p>
+        {% endif %}
+      {% endif %}
+      <br>
+      <label for="name" id="label_txt">닉네임</label>
+      <input type = "text" class = "form-control" name = "name" id = "name" value = "{{form.name.value|default_if_none:''}}" maxlength = 10>
+      <label for="email" id="label_txt">이메일</label>
+      <input type = "text" class = "form-control" name = "email" id = "email" value = "{{form.email.value|default_if_none:''}}">
+      
+
+
+      <div id="popup3">
+        <svg id="agreeCross" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+          <g id="_레이어_1-2" data-name="레이어 1">
+            <g>
+              <line class="cross-cls-1" x1="5" y1="5" x2="55" y2="55"/>
+              <line class="cross-cls-1" x1="55" y1="5" x2="5" y2="55"/>
+            </g>
+          </g>
+        </svg>
+        <div class="mb-3" id="agreePopupTXT" style="margin-top: 18%;">
+          <label for="agree_terms" id="agree_label_txt">이용약관</label>
+            <div class="div" style="overflow-y: scroll; height:60%">
+              {% include "common/agree1.html" %}
+            </div>
+          <div id="agreeCheck">
+            <input type="checkbox" name="agree_terms" id="agree_terms"><label for="agree_terms"></label><p>동의</p>
+          </div>
+        </div>
+        <div class="mb-3" id="agreePopupTXT">
+          <label for="agree_marketing" id="agree_label_txt">개인정보처리방침</label>
+            <div class="div" style="overflow-y: scroll; height:60%;">
+              {% include "common/agree2.html" %}
+            </div>
+          <div id="agreeCheck">
+            <input type="checkbox" name="agree_marketing" id="agree_marketing"><label for="agree_marketing"></label><p>동의</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">동의 후 가입하기</button>
+      </div>
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      
+    </form>
+    <button class="btn" id="agreebtn">가입하기</button>
+  </div>
+</body>
+</html>
+<script>
+  let popupShow = document.querySelector("#agreebtn");
+    popupShow.addEventListener("click", function(){
+      console.log(1);
+      const popup3 = document.getElementById("popup3").style.display = "block";
+    })
+  
+    let close2 = document.querySelector("#agreeCross");
+    close2.addEventListener("click", function(){
+      const popup3 = document.getElementById("popup3").style.display = "none";
+    })
+  </script>
+
+
